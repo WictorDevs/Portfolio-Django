@@ -52,7 +52,7 @@
 {% block content %}
 <div class="perfil">
     {% if pessoal %}
-    <img src="{{pessoal.imagem_url}}" alt="Foto do Aluno">
+    <img src="{{pessoal.url_imagem }}" alt="Foto do Aluno">
     <h2>{{pessoal.nome}}</h2>
     <p>Estudante {{pessoal.curso}} - UAST/UFRPE</p>
     {% endif %}
@@ -100,6 +100,16 @@
         border-radius: 5px;
         cursor: pointer;
     ">Editar Perfil</button>
+    <button id="btn-sair" style="
+    background-color: #e74c3c;
+    color: white;
+    border: none;
+    padding: 12px 30px;
+    font-size: 1.1em;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-left: 10px;
+    ">Sair</button>
 </div>
 
 <!-- Modal de Login -->
@@ -379,6 +389,9 @@ btnSalvar.addEventListener('click', function() {
 
         // Atualiza os dados na pagina (sem recarregar)
         atualizarPagina(perfil);
+        setTimeout(function() {
+        location.reload();
+        }, 500);
     })
     .catch(function(erro) {
         editErro.textContent = 'Erro ao salvar: ' + erro.message;
@@ -436,5 +449,17 @@ btnCancelarLogin.addEventListener('click', function() {
 btnCancelarEditar.addEventListener('click', function() {
     modalEditar.style.display = 'none';
 });
+
+// ─── Desafio 2: Botao Sair ───
+
+const btnSair = document.getElementById('btn-sair');
+
+btnSair.addEventListener('click', function() {
+    localStorage.removeItem('access_token');
+    localStorage.removeItem('refresh_token');
+    alert('Você saiu!');
+});
+
+
 </script>
 {% endblock %}
