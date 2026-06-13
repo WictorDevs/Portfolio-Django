@@ -150,8 +150,7 @@ python manage.py runserver
 Acesse `http://127.0.0.1:8000/admin/` e faça login.
 
 - Clique em **Perfis Pessoais → Adicionar** e preencha seus dados
-- Clique em **Projetos → Adicionar** para adicionar projetos (opcional)
-- Clique em **Certificados → Adicionar** para adicionar certificados (opcional)
+
 
 ---
 
@@ -168,16 +167,43 @@ O sino no canto superior direito deve aparecer com:
 - 🟢 **0 verde** — conectado, sem notificações
 - 🔴 **N vermelho** — N notificações não lidas
 
-### 5.3 Criar notificações de teste
+### 5.3 Configurar e rodar o script de envio
 
-Com o venv do microserviço ativado, rode o script:
+Abra o arquivo `enviar_notificacao.py` na raiz do projeto `Notification` e atualize a linha:
 
+```python
+API_KEY = 'cole_aqui_o_hash_da_empresa'
+```
+
+Substitua pelo mesmo hash anotado no passo 2.6.
+
+Abra um **novo terminal**, entre na pasta do microserviço e ative o venv:
+
+**Linux/Mac:**
 ```bash
 cd Notification
+source venv/bin/activate
+```
+
+**Windows:**
+```bash
+cd Notification
+venv\Scripts\activate
+```
+
+Rode o script:
+
+```bash
 python enviar_notificacao.py
 ```
 
-Em até 5 segundos o badge do sino deve atualizar com o número de notificações.
+Saída esperada:
+```
+✓ Notificacao enviada: Matricula
+✓ Notificacao enviada: Notas
+✓ Notificacao enviada: Agenda
+```
+
 
 ### 5.4 Testar o dropdown
 

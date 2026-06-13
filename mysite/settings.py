@@ -143,4 +143,4 @@ SIMPLE_JWT = {
 }
 
 NOTIFICACAO_MS_URL = 'http://127.0.0.1:8001'
-NOTIFICACAO_MS_API_KEY = 'cad4eb183b567f6b'
+NOTIFICACAO_MS_API_KEY = 'cole_aqui_o_hash_da_empresa'
