@@ -155,6 +155,11 @@
           text-align: center;
           color: #999;
       }
+      .notif-item .notif-titulo {
+    font-size: 0.9em;
+    color: #2c3e50;
+    margin-bottom: 3px;
+}
 
       {% block extra_css %}{% endblock %}
     </style>
@@ -167,6 +172,8 @@
     <nav>
       <a href="{% url 'portfolio:home' %}">Inicio</a>
       <a href="{% url 'portfolio:projetos' %}">Projetos</a>
+      <a href="{% url 'portfolio:contatos' %}">Contatos</a>
+
 
       <!-- Sino de Notificacoes -->
       {% if user.is_authenticated %}
@@ -253,6 +260,9 @@
                 var classe = notif.is_read ? "notif-item" : "notif-item nao-lida";
                 var data = new Date(notif.criado_em).toLocaleString("pt-BR");
                 html += '<div class="' + classe + '" data-id="' + notif.id + '">';
+                if (notif.titulo) {
+                  html += '  <div class="notif-titulo"><strong>' + notif.titulo + '</strong></div>';
+                }
                 html += '  <div class="notif-mensagem">' + notif.mensagem + "</div>";
                 html += '  <div class="notif-data">' + data + "</div>";
                 html += "</div>";
