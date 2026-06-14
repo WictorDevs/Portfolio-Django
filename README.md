@@ -54,7 +54,7 @@ venv\Scripts\activate
 ### 2.2 Instalar dependências
 
 ```bash
-pip install django djangorestframework django-cors-headers
+pip install django djangorestframework django-cors-headers requests
 ```
 
 ### 2.3 Aplicar migrações
@@ -117,7 +117,7 @@ pip install django djangorestframework djangorestframework-simplejwt django-cors
 
 ### 3.3 Configurar a API Key do microserviço
 
-Abra o arquivo `mysite/settings.py` e atualize a linha:
+Abra o arquivo `mysite/settings.py` e atualize a linha 146:
 
 ```python
 NOTIFICACAO_MS_API_KEY = 'cole_aqui_o_hash_da_empresa'
