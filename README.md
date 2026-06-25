@@ -182,6 +182,10 @@ API_KEY = 'cole_aqui_o_hash_da_empresa'
 Substitua pelo mesmo hash anotado no passo 2.6.
 
 Abra um **novo terminal**, entre na pasta do microserviço e ative o venv:
+```bash
+cd ~/Projetos   # ou qualquer pasta de sua preferência
+```
+
 
 **Linux/Mac:**
 ```bash
