@@ -92,6 +92,10 @@ Acesse `http://127.0.0.1:8001/admin/` e faça login com o superusuário criado.
 
 Abra um **segundo terminal** e volte para a pasta dos projetos:
 
+```bash
+cd ~/Projetos   # ou qualquer pasta de sua preferência
+```
+
 ### 3.1 Criar e ativar o ambiente virtual
 
 ```bash
@@ -169,7 +173,7 @@ O sino no canto superior direito deve aparecer com:
 
 ### 5.3 Configurar e rodar o script de envio
 
-Abra o arquivo `enviar_notificacao.py` na raiz do projeto `Notification` e atualize a linha:
+Abra o arquivo `enviar_notificacao.py` na raiz do projeto `Notification` e atualize a linha 6:
 
 ```python
 API_KEY = 'cole_aqui_o_hash_da_empresa'
